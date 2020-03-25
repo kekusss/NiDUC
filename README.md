@@ -1,2 +1,4 @@
-# NiDUC
-Niezawodność i Diagnostyka Urządzeń Cyfrowych -unikanie utraty synchronizacji przy pomocy randomizacji (Scrambling) 
+NiDUC
+Niezawodność i Diagnostyka Urządzeń Cyfrowych
+Temat: Unikanie utraty synchronizacji przy pomocy randomizacji (Scrambling) 
+Autorzy: Kewin Warzecha, Artur Sołtys
