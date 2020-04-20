@@ -1,4 +1,4 @@
 <h1>NiDUC</h1>
-Niezawodność i Diagnostyka Urządzeń Cyfrowych <br/>
-Temat: Unikanie utraty synchronizacji przy pomocy randomizacji (Scrambling) <br/>
-Autorzy: Kewin Warzecha, Artur Sołtys <br/>
+<h3>Niezawodność i Diagnostyka Urządzeń Cyfrowych</h3> <br/>
+<b>Temat:</b> Unikanie utraty synchronizacji przy pomocy randomizacji (Scrambling) <br/>
+<b>Autorzy:</b> Kewin Warzecha, Artur Sołtys <br/>
