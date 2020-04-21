@@ -1,7 +1,7 @@
 
    % Funkcja zaklocajaca nasz sygnal wejsciowy 
    % z danym prawdopodobienstwem przklamania bitu
-   % Imitacja kana³u transmisyjnego
+   % Imitacja kanalu transmisyjnego
    
 function signalWithNoise = addNoiseToSignal(inputSignal, probability)
    

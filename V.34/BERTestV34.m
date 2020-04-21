@@ -10,11 +10,11 @@ errors = zeros(1,PLength);
 for i=1 : PLength
     % dodanie zaklocen do sygnalu scramblowanego 
     if isScrambled == 1
-        noisySignal = addNoise(scrambledSignal, P(i));
+        noisySignal = addNoiseToSignal(scrambledSignal, P(i));
         descrambledSignal = descramblerV34(noisySignal);
         errors(i) = sum(~compareSignals(inputSignal, descrambledSignal(1:length(inputSignal))));
     else
-        noisySignal = addNoise(inputSignal, P(i)); % sygnal zaszumiony
+        noisySignal = addNoiseToSignal(inputSignal, P(i)); % sygnal zaszumiony
         errors(i) = sum(~compareSignals(inputSignal, noisySignal(1:length(inputSignal)))); % Konieczna negacja.
     end
 end

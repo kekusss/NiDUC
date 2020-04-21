@@ -1,7 +1,5 @@
-    % Porównanie sygna³u wejsciowego z sygna³em po descramblowaniu
-    % Macierz signalCorrect bêdzie posiadaæ 1 tam, gdzie sygna³y s¹ zgodne.
+    % Porï¿½wnanie sygnaï¿½u wejsciowego z sygnaï¿½em po descramblowaniu
+    % Macierz signalCorrect bï¿½dzie posiadaï¿½ 1 tam, gdzie sygnaï¿½y sï¿½ zgodne.
 function signalCorrect = compareSignals(inputSignal, descrambledSignal)
-
     signalCorrect = inputSignal == descrambledSignal;
-    
 end
