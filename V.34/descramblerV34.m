@@ -1,18 +1,14 @@
 % Descrambler mulitplikatywny V34
 
-function descrambledV34 = descramblerV34 (scrambledSignal)
-    register = zeros(1, 23);
-    descrambledV34 = zeros(1, length(scrambledSignal));
-    
-    % k=1;
-    for i=1 : length(scrambledSignal)
-        xor1 = xor(register(18), register(23));
-        descrambledV34(i) = xor( scrambledSignal(i), xor1);
-        
-        for j = 23 : -1 : 2
-            register(j) = register(j-1);
-        end
-        register(1) = scrambledSignal(i);
-    end
+function outputSignal = descramblerV34 (inputSignal)
+    sync = [ 1 0 0 1 0 1 0 1 0 0 0 0 0 0 0 1 0 1 1 1 0 0 1 ]';
 
+    for i = 1 : 1 : length(inputSignal)
+        
+        xor1 = xor ( sync(18), sync(23));
+        sync = circshift(sync,1);
+        sync(1) = inputSignal(i);
+        
+        outputSignal(i) = xor (xor1, inputSignal(i));
+    end
 end

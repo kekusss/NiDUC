@@ -1,16 +1,14 @@
 % Scrambler multiplikatywny V34
 
-function scrambledV34 = scramblerV34 (inputSignal)
+function outputSignal = scramblerV34 (inputSignal)
+    sync = [ 1 0 0 1 0 1 0 1 0 0 0 0 0 0 0 1 0 1 1 1 0 0 1 ]';
 
-register = zeros(1,23);
-scrambledV34 = zeros(1, length(inputSignal));
-
-    for i = 1 : length(inputSignal)
-        xor1 = xor(register(18), register(23));
-        scrambledV34(i) = xor(inputSignal(i), xor1);
-        for j = 23 : -1 : 2
-            register(j) = register(j-1);
-        end
-        register(1) = scrambledV34(i);
+    for i = 1 : 1 : length(inputSignal)
+        xor1 = xor ( sync(18), sync(23));
+        sync = circshift(sync,1);
+    
+        xor2 = xor(xor1, inputSignal(i));
+        sync(1) = xor2;
+        outputSignal(i) = xor2;
     end
- end
+end

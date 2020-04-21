@@ -17,8 +17,8 @@ function outputSignal = DVBTest(inputSignal, isRandom)
     subplot(1, 1, 1);
     bar(y);
     hold on;
-        text(1 : length(stringsBefore), stringsBefore, num2str(stringsBefore'), 'vert', 'bottom', 'horiz', 'right');
-        text(1 : length(stringsAfter), stringsAfter, num2str(stringsAfter'), 'vert', 'bottom', 'horiz', 'left');
+        text(1 : length(stringsBefore), stringsBefore, num2str(stringsBefore'));
+        text(1 : length(stringsAfter), stringsAfter, num2str(stringsAfter'));
         legend('Sygnal przed scramblingiem', 'Sygnal po scramblingu');
         title('Dlugosci ciagow');
     hold off;

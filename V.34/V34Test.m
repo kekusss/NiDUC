@@ -10,7 +10,6 @@ function outputSignal = V34Test(inputSignal, isRandom)
     [stringsBefore, stringsAfter] = alignMatrices(stringsBefore, stringsAfter, isRandom);
     
     %% Tworzenie wykresu
-    
     y = [stringsBefore', stringsAfter'];
     
     figure;

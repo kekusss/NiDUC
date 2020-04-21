@@ -5,7 +5,7 @@ function [randomSignal, onesSignal, zerosSignal] = generateTestSignals(chainLeng
     preSignal = round(random);
     for i=1 : chainLength
         tmp = preSignal(i);
-        for j=1:5
+        for j=1:10
             randomSignal(j+10*(i-1))=tmp;
         end
     end
