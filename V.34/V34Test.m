@@ -3,8 +3,8 @@ function outputSignal = V34Test(inputSignal, isRandom)
     outputSignal = scramblerV34(inputSignal);
     
     %% Porównanie ilości ciągów o danej długości
-    [~, stringsBefore] = getStrings(inputSignal, isRandom);
-    [~, stringsAfter] = getStrings(outputSignal, isRandom);
+    [stringsBefore] = getStrings(inputSignal, isRandom);
+    [stringsAfter] = getStrings(outputSignal, isRandom);
     
     %% Wyrównanie macierzy
     [stringsBefore, stringsAfter] = alignMatrices(stringsBefore, stringsAfter, isRandom);

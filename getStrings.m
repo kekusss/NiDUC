@@ -1,4 +1,4 @@
-function [x,strings] = getStrings(signal,isRandom)
+function [strings] = getStrings(signal,isRandom)
     %% znalezienie najdluzszego ciagu
     maxLength = 0;
     len = 1;
@@ -22,7 +22,6 @@ function [x,strings] = getStrings(signal,isRandom)
     
     %% znalezienie ilosci ciagow o danej dlugosci
     len = 1;
-    x = 1 : maxLength;
     strings = zeros(1, maxLength);
     
     for i = 2 : length(signal)
