@@ -1,19 +1,20 @@
-function [P, errors] = BERTestV34(inputSignal,P)
+function [P, errors] = BERTestV34(inputSignal, P, isScrambled)
 % Przygotowanie danych
-if(~exist('P', 'var'))
-        P = [0.0001 0.00015 0.0002 0.00025 0.0003 0.00035 0.0004 0.00045 0.0005];
-end
-
 scrambledSignal = scramblerV34(inputSignal);
 PLength = length(P);
 errors = zeros(1,PLength);
 
-%Por�wnanie sygnalu wejsciowego z wyjsciowym
+%Porownanie sygnalu wejsciowego z wyjsciowym
 for i=1 : PLength
-    %% tutaj mozna dodac zaklocenia do sygnalu scramblowanego - 
-    noisySignal = addNoise(scrambledSignal, P(i));
-    descrambledSignal = descramblerV34(noisySignal);
-    errors(i) = sum(~compareSignals(inputSignal, descrambledSignal(1:length(inputSignal)))); 
+    %% dodanie zaklocen do sygnalu scramblowanego 
+    if isScrambled == 1
+        noisySignal = addNoise(scrambledSignal, P(i));
+        descrambledSignal = descramblerV34(noisySignal);
+        errors(i) = sum(~compareSignals(inputSignal, descrambledSignal(1:length(inputSignal))));
+    else
+        noisySignal = addNoise(inputSignal, P(i)); % sygnal zaszumiony
+        errors(i) = sum(~compareSignals(inputSignal, noisySignal(1:length(inputSignal)))); % Konieczna negacja.
+    end
 end
 
 

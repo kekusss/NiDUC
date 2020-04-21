@@ -1,18 +1,17 @@
-function BERTests(randomSignal, zerosSignal, onesSignal)
+function BERTests(randomSignal, zerosSignal, onesSignal, isScrambled)
     P = zeros(1, 100);
     for i=2 : 100
-        P(i)=P(i-1)+0.0001;
-        i=i+2;
+        P(i)=P(i-1)+0.01;
     end
   %% BER dla scramblingu DVB
-    [~, y_r_dvb] = BERTestDVB(randomSignal, P);
-    [~, y_z_dvb] = BERTestDVB(zerosSignal, P);
-    [~, y_o_dvb] = BERTestDVB(onesSignal, P);
+    [~, y_r_dvb] = BERTestDVB(randomSignal, P, isScrambled);
+    [~, y_z_dvb] = BERTestDVB(zerosSignal, P, isScrambled);
+    [~, y_o_dvb] = BERTestDVB(onesSignal, P, isScrambled);
     
     %% BER dla scramblingu V.34
-    [~, y_r_v34] = BERTestV34(randomSignal, P);
-    [~, y_z_v34] = BERTestV34(zerosSignal, P);
-    [~, y_o_v34] = BERTestV34(onesSignal, P);
+    [~, y_r_v34] = BERTestV34(randomSignal, P, isScrambled);
+    [~, y_z_v34] = BERTestV34(zerosSignal, P, isScrambled);
+    [~, y_o_v34] = BERTestV34(onesSignal, P, isScrambled);
     
     %% Wykresy
     P = P * 100;
