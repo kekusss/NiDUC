@@ -1,6 +1,7 @@
-% Scrambler multiplikatywny V34
+% funkcja odpowiadajaca za Scrambler multiplikatywny V34
 
 function outputSignal = scramblerV34 (inputSignal)
+    %slowo znajdujace sie w rejestrze przesuwnym scramblera
     sync = [ 1 0 0 1 0 1 0 1 0 0 0 0 0 0 0 1 0 1 1 1 0 0 1 ]';
 
     for i = 1 : 1 : length(inputSignal)

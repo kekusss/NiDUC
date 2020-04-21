@@ -9,16 +9,16 @@ function [P, errors] = BERTestDVB(inputSignal, P, isScrambled)
   %Porownanie sygnalu wejsciowego z wyjsciowym
     for i = 1 : PLength
         if isScrambled == 1
-            noisySignal = addNoise(scrambledSignal, P(i)); % sygnal zaszumiony
+            noisySignal = addNoise(scrambledSignal, P(i)); % zaszumianie sygnalu
             descrambledSignal = DVBDescramble(noisySignal);
             errors(i) = sum(~compareSignals(inputSignal, descrambledSignal(1:length(inputSignal)))); % Konieczna negacja.
         else
-            noisySignal = addNoise(inputSignal, P(i)); % sygnal zaszumiony
+            noisySignal = addNoiseToSignal(inputSignal, P(i)); % zaszumianie sygnalu
             errors(i) = sum(~compareSignals(inputSignal, noisySignal(1:length(inputSignal)))); % Konieczna negacja.
         end
     end
 
-%% Zamiana iloilosci bledow na procent blednych bitow
+% Zamiana ilosci bledow na procent blednych bitow
     errors = errors / length(inputSignal);
     errors = errors * 100;
 

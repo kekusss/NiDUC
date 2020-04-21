@@ -1,3 +1,5 @@
+% funkcja przesuwajaca bity w rejestrze przesuwnym scramblera
+
 function shiftedRegister = registerShift(sync, xorOutput)
     shiftedRegister = sync;
     for i = 15 : -1 : 2

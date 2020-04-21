@@ -1,15 +1,19 @@
+%Funkcja sprawdzajaca scramblowanie multiplikatywne wraz z rysowaniem
+%wykresu 
+
 function outputSignal = V34Test(inputSignal, isRandom)
-    %% Scrambling
+
+    % Scramblowanie sygnalu wejsciowego
     outputSignal = scramblerV34(inputSignal);
     
-    %% Porównanie ilości ciągów o danej długości
+    % Porownanie ilosci ciagow o danej dlugosci
     [stringsBefore] = getStrings(inputSignal, isRandom);
     [stringsAfter] = getStrings(outputSignal, isRandom);
     
-    %% Wyrównanie macierzy
+    % Wyrownywanie macierzy
     [stringsBefore, stringsAfter] = alignMatrices(stringsBefore, stringsAfter, isRandom);
     
-    %% Tworzenie wykresu
+    % Tworzenie wykresu
     y = [stringsBefore', stringsAfter'];
     
     figure;

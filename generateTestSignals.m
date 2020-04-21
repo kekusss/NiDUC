@@ -1,4 +1,4 @@
-%% generuje sygnal pseudolosowy
+% funkcja generujaca sygnal pseudolosowy
 function [randomSignal, onesSignal, zerosSignal] = generateTestSignals(chainLength)
     randomSignal = zeros(1, chainLength*10);
     random = rand(1, chainLength);

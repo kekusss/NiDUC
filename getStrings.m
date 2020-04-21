@@ -1,5 +1,5 @@
 function [strings] = getStrings(signal,isRandom)
-    %% znalezienie najdluzszego ciagu
+    % algorytm znajdowania najdluzszego ciagu 0 lub 1
     maxLength = 0;
     len = 1;
     for i = 2 : length(signal)
@@ -13,14 +13,14 @@ function [strings] = getStrings(signal,isRandom)
         end
     end
     
-    %jeśli najdłuzszy ciag na koncu
+    % rozpatrzenie przypadku w ktorym najdluzszy ciag wystepuje na koncu sygnalu
     if isRandom == 1
         if maxLength < len
             maxLength = len;
         end
     end
     
-    %% znalezienie ilosci ciagow o danej dlugosci
+    % algorytm zliczania ilosci ciagow o danej dlugosci
     len = 1;
     strings = zeros(1, maxLength);
     
@@ -33,7 +33,7 @@ function [strings] = getStrings(signal,isRandom)
         end
     end
     
-    %jeśli ciąg konczy sie na ostatnim elemencie
+    %gdy dany ciag konczy sie na ostatnim elemencie
     if isRandom == 1
         if signal(i) == signal (i-1)
             strings(len) = strings(len) + 1;

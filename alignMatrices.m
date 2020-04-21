@@ -1,5 +1,9 @@
 function [stringsBefore, stringsAfter] = alignMatrices(stringsBefore, stringsAfter, isRandom)
-    %% Wyrównanie macierzy
+
+    % Wyrownanie macierzy
+    % jezeli dlugosci strumieni wejsciowego oraz wyjsciowego sie roznia
+    % nalezy ten krotszy wydluzyc uzupelniajac zerami
+    
     if length(stringsBefore) < length(stringsAfter)
         for i = length(stringsBefore) + 1 : 1 :  length(stringsAfter)
             stringsBefore(i)=0;

@@ -1,3 +1,5 @@
+%funkcja sprawdzajaca dzialanie scramblera V34 z badaniem BER
+
 function [P, errors] = BERTestV34(inputSignal, P, isScrambled)
 % Przygotowanie danych
 scrambledSignal = scramblerV34(inputSignal);
@@ -6,7 +8,7 @@ errors = zeros(1,PLength);
 
 %Porownanie sygnalu wejsciowego z wyjsciowym
 for i=1 : PLength
-    %% dodanie zaklocen do sygnalu scramblowanego 
+    % dodanie zaklocen do sygnalu scramblowanego 
     if isScrambled == 1
         noisySignal = addNoise(scrambledSignal, P(i));
         descrambledSignal = descramblerV34(noisySignal);

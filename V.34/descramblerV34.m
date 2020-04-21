@@ -1,6 +1,7 @@
 % Descrambler mulitplikatywny V34
 
 function outputSignal = descramblerV34 (inputSignal)
+    %slowo znajdujace sie w rejestrze przesuwnym descramblera
     sync = [ 1 0 0 1 0 1 0 1 0 0 0 0 0 0 0 1 0 1 1 1 0 0 1 ]';
 
     for i = 1 : 1 : length(inputSignal)

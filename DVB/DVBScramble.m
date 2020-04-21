@@ -1,5 +1,6 @@
+%funkcja odpowiadajaca za scrambler DVB
 function outputSignal = DVBScramble(inputSignal)
-    %% Scrambling
+    % Scrambling
     outputSignal = inputSignal;
     sync = syncString();
     for i = 1 : length(outputSignal)

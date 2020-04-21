@@ -2,7 +2,7 @@ function descrambledSignal = DVBDescramble(inputSignal)
     % przygotowanie macierzy
     descrambledSignal = zeros(1, length(inputSignal));
     
-    % ciąg synchronizujący
+    % slowo synchronizujace
     sync = syncString();
     
     % descramblowanie

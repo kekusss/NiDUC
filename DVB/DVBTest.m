@@ -1,15 +1,15 @@
 function outputSignal = DVBTest(inputSignal, isRandom)
-    %% Scrambling
+    % Scrambling
     outputSignal = DVBScramble(inputSignal);
     
-    %% Porównanie ilości ciągów o danej długości
+    % Porownanie ilosci ciagow o danej dlugosci
     [stringsBefore] = getStrings(inputSignal, isRandom);
     [stringsAfter] = getStrings(outputSignal, isRandom);
     
-    %% Wyrównanie macierzy
+    % Wyrownanie macierzy
     [stringsBefore, stringsAfter] = alignMatrices(stringsBefore, stringsAfter, isRandom);
     
-    %% Tworzenie wykresu
+    % Tworzenie wykresu
     
     y = [stringsBefore', stringsAfter'];
     
