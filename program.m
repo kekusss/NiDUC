@@ -5,7 +5,7 @@ addpath DVB
 addpath V.34
 
 %długość ciągów
-chainLength = 100000;
+chainLength = 1000;
 
 %% Przygotowanie sygnałów testowych
 [randomSignal,onesSignal,zerosSignal] = generateTestSignals(chainLength);
