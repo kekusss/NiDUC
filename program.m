@@ -8,13 +8,16 @@ addpath V.34
 chainLength = 100000;
 
 %% Przygotowanie sygnałów testowych
-[randomSingal,onesSignal,zerosSignal] = generateTestSignals(chainLength);
+[randomSignal,onesSignal,zerosSignal] = generateTestSignals(chainLength);
 %% DVB
-DVBTest(randomSingal, 1);
-DVBTest(onesSignal, 0);
-DVBTest(zerosSignal, 0);
+%DVBTest(randomSignal, 1);
+%DVBTest(onesSignal, 0);
+%DVBTest(zerosSignal, 0);
 
 %% V.34
-V34Test(randomSingal, 1);
-V34Test(onesSignal, 0);
-V34Test(zerosSignal, 0);
+%V34Test(randomSignal, 1);
+%V34Test(onesSignal, 0);
+%V34Test(zerosSignal, 0);
+
+%% BER Test
+BERTests(randomSignal, zerosSignal, onesSignal);
