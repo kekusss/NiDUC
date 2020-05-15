@@ -1,10 +1,10 @@
 % funkcja generujaca sygnaly testowe
 function [randomSignal, onesSignal, zerosSignal, fileSignal] = generateTestSignals(chainLength)
     %% pseudolosowy ze zwiekszonym prawdopodobienstwem wystepowania dlugich ciagow
-    randomSignal = zeros(1, chainLength*10);
+    randomSignal = zeros(1, chainLength);
     random = rand(1, chainLength);
     preSignal = round(random);
-    for i=1 : chainLength
+    for i=1 : chainLength/10
         tmp = preSignal(i);
         for j=1:10
             randomSignal(j+10*(i-1))=tmp;
